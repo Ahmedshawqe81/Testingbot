@@ -62,9 +62,8 @@ client.on('message', message => {
  var prefix = "!"
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
     const reason = message.content.split(" ").slice(1).join(" ");
-    if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لآ يوجد رتبه بـ اسم "Support Team " 
-قم بأضافه الرتبه و جرب مره اخري`);
-    if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`يوجد بالفعل تكت مفتوح.`);
+    if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لا يوجد رتبه Support Team ، لا يمكن فتح الشكوة`);
+    if (message.guild.channels.exists("name", "ticket-" + message.author.name)) return message.channel.send(`يوجد بالفعل تكت مفتوح.`);
     message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
         let role = message.guild.roles.find("name", "Support Team");
         let role2 = message.guild.roles.find("name", "@everyone");
