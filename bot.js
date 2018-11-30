@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = 'a!'
- 
- 
- 
+
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`LastCodes4Ever  `,"https://www.twitch.tv/dggamingbot")
@@ -29,7 +29,7 @@ client.user.setGame(`LastCodes4Ever  `,"https://www.twitch.tv/dggamingbot")
   console.log('')
   console.log('')
 });
- 
- 
- 
+
+
+
 client.login(process.env.BOT_TOKEN);
